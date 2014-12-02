@@ -18,7 +18,7 @@ dependencies:
     - if [-f ./.cabal-sandbox/packages]; then rm .cabal-sandbox/packages/*; fi
     - cabal sandbox init
     - cabal configure
-         timeout: 3000  
+    
 test:
   override:
      - cabal build -j2:
