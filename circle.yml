@@ -17,6 +17,7 @@ dependencies:
     - cabal update
     - if [-f ./.cabal-sandbox/packages]; then rm .cabal-sandbox/packages/*; fi
     - cabal sandbox init
+    - cabal install -j2
     - cabal configure
     
 test:
