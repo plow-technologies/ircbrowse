@@ -1,6 +1,6 @@
 machine:
   ghc:
-    version: 7.4
+    version: 7.4.2
 
   environment:
     PATH:  $HOME/.cabal/bin:$CIRCLE_ARTIFACTS:$PATH:/$HOME/.cabal-sandbox/bin
