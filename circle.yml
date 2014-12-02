@@ -30,5 +30,5 @@ deployment:
    staging:
      branch: master     
      commands:
-     - cd ./dist/build/ircbrowse/ && rsync -avz -e ssh ircbrowse scott@54.69.197.241:/home/scott/incoming/
+     - cd ./dist/ && rsync -avz -e ssh build  scott@54.69.197.241:/home/scott/incoming/build/
      
