@@ -3,25 +3,25 @@ machine:
     version: 7.4
 
   environment:
-    PATH: $HOME/.cabal/bin:$CIRCLE_ARTIFACTS:$PATH:/$HOME/ircbrowse/.cabal-sandbox/bin
+    PATH:  $HOME/.cabal/bin:$CIRCLE_ARTIFACTS:$PATH:/$HOME/.cabal-sandbox/bin
 
 
 dependencies:
   
   cache_directories:
-    - "~/ircbrowse/.cabal-sandbox"
-    - "~/ircbrowse/dist
+     - .cabal-sandbox
+    - dist
 
   override:
     - "if [ ! -f /home/ubuntu/.cabal/config ]; then cabal update && echo remote-repo: stackage:http://www.stackage.org/stackage/bcd05bfac24db21c8d25b1069765e3d4d7037ee3 >> ~/.cabal/config; else echo .cabal/config file already exists; fi"
-    - cd ~/ircbrowse/ && cabal update
-    - cd ~/ircbrowse/ && cabal sandbox init
-    - cd ~/plow-alarm/alarm-state/dev/alarm-state/ && cabal install -j2
-    - cd ~/ircbrowse && cabal configure
+    - cabal update
+    - if [-f ./.cabal-sandbox/packages]; then rm .cabal-sandbox/packages/*; fi
+    - cabal sandbox init
+    - cabal configure
          timeout: 3000  
 test:
   override:
-     - cd ~/ircbrowse && cabal build -j2:
+     - cabal build -j2:
         timeout: 3000
      
      
@@ -29,5 +29,5 @@ deployment:
    staging:
      branch: master     
      commands:
-     - cd ~/ircbrowse/dist/build/ircbrowse/ && rsync -avz -e ssh  ircbrowse scott@54.69.197.241:/home/scott/incoming/
+     - cd ./dist/build/ircbrowse/ && rsync -avz -e ssh ircbrowse scott@54.69.197.241:/home/scott/incoming/
      
