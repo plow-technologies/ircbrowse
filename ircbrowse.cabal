@@ -44,5 +44,5 @@ executable ircbrowse
                      timezone-olson,
                      timezone-series,
                      attoparsec,
-		     network-uri
+                     network-uri
                      split
