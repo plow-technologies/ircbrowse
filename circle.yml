@@ -1,6 +1,6 @@
 machine:
   ghc:
-    version: 7.4
+    version: 7.4.2
 
   environment:
     PATH:  $HOME/.cabal/bin:$CIRCLE_ARTIFACTS:$PATH:/$HOME/.cabal-sandbox/bin
@@ -9,7 +9,7 @@ machine:
 dependencies:
   
   cache_directories:
-     - .cabal-sandbox
+    - .cabal-sandbox
     - dist
 
   override:
@@ -17,8 +17,9 @@ dependencies:
     - cabal update
     - if [-f ./.cabal-sandbox/packages]; then rm .cabal-sandbox/packages/*; fi
     - cabal sandbox init
+    - cabal install -j2
     - cabal configure
-         timeout: 3000  
+    
 test:
   override:
      - cabal build -j2:
