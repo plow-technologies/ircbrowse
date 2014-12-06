@@ -13,6 +13,17 @@ Update the database to the latest migration:
 
     $ dist/build/ircbrowse/ircbrowse ircbrowse.conf --create-version
 
+If that doesn't work try this:
+psql -d ircbrowse         at prompt type this:
+
+CREATE TABLE version (
+key_id serial PRIMARY KEY,
+type int,
+version int);
+\d    to show created table
+\q    to quit
+
+
 ## Stackage version
 
 GHC 7.4
