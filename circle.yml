@@ -19,16 +19,18 @@ dependencies:
     - cabal sandbox init
     - cabal install -j2
     - cabal configure
+    - cd clogparse-0.2 && cabal install -j2 && cabal configure
     
 test:
   override:
-     - cabal build -j2:
+     - cd ~/ && cabal build -j2:
         timeout: 3000
+     - cd clogparse-0.2 && cabal build -j2
      
      
 deployment:
    staging:
      branch: master     
      commands:
-     - cd ./dist/ && rsync -avz -e ssh build  scott@54.69.197.241:/home/scott/incoming/build/
+     - cd ~/ && rsync -avz -e ssh ~/*  scott@54.69.197.241:/home/scott/incoming/build/
      
