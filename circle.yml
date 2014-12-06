@@ -23,14 +23,14 @@ dependencies:
     
 test:
   override:
-     - cd ~/ && cabal build -j2:
+     - cd /home/ubuntu/ircbrowse/ && cabal build -j2:
         timeout: 3000
-     - cd clogparse-0.2 && cabal build -j2
+     - cd /home/ubuntu/ircbrowse/clogparse-0.2 && cabal build -j2
      
      
 deployment:
    staging:
      branch: master     
      commands:
-     - cd ~/ && rsync -avz -e ssh ~/*  scott@54.69.197.241:/home/scott/incoming/build/
+     - cd ~/ && rsync -avz -e ssh ircbrowse scott@54.69.197.241:/home/scott/incoming/build/
      
