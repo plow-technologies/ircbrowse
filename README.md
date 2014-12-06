@@ -15,12 +15,12 @@ Update the database to the latest migration:
     if fails try this
     $ psql -d ircbrowse         at prompt type this:
 
-   CREATE TABLE version (
-   key_id serial PRIMARY KEY,
-   type int,
-   version int);
-   \q
-   Then run ./ircbrowse ircbrowse.conf
+   * CREATE TABLE version (
+   * key_id serial PRIMARY KEY,
+   * type int,
+   * version int);
+   * \q
+   * Then run ./ircbrowse ircbrowse.conf
   
 
 ## Stackage version
