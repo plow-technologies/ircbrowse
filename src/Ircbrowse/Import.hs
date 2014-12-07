@@ -64,9 +64,9 @@ importRecent quick config pool = do
         putStrLn $ "Imported channel " ++ showChan channel
       _ -> do
         logs <- fmap (sort) (getDirectoryContents (configLogDir config))
-        --case find (isInfixOf (prettyChan channel ++ "_")) logs of
-        --  Nothing -> error $ "Unable to get last import time, or find the first log of this channel: " ++ showChan channel
-          --Just fp ->
+        case find (isInfixOf (prettyChan channel ++ "_")) logs of
+          Nothing -> error $ "Unable to get last import time, or find the first log of this channel: " ++ showChan channel
+          Just fp ->
             case parseFileTime fp of
               Nothing -> error $ "Found log of this channel in the log dir, but couldn't parse date from the filename: " ++ fp
               Just lastdate -> do
