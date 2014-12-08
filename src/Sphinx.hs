@@ -29,7 +29,7 @@ data Sphinx = Sphinx
   } deriving Show
 
 instance Default Sphinx where
-  def = Sphinx "sphinx" "" "./sphinx.conf" 35 0 []
+  def = Sphinx "sphinx" "" "/opt/sphinx/etc/sphinx.conf" 35 0 []
 
 data Result = Result
   { rIndex    :: !Text
