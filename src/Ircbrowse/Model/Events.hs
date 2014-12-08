@@ -17,7 +17,7 @@ getEvents channel tid (PN _ pagination _) q = do
   case q of
     Just q -> do
       result <- io $ search def
-        { sPath = "/opt/sphinx/bin/searchd"
+        { sPath = "/opt/sphinx/bin/search --any"
         , sConfig = "sphinx.conf"
         , sQuery = escapeText q
         , sOffset = fromIntegral ((pnCurrentPage pagination - 1) * pnPerPage pagination)
