@@ -82,26 +82,28 @@ parseChan _ = Nothing
 
 
 idxNum :: Channel -> Int
-idxNum Haskell = 1000
-idxNum Lisp = 2000
-idxNum HaskellGame = 3000
-idxNum Diagrams = 4000
-idxNum Tasty = 5000
-idxNum HaskellDistributed = 6000
-idxNum NumericalHaskell = 7000
-idxNum FSharp = 8000
-idxNum Ghcjs = 9000
-idxNum HaskellBeginners = 10000
-idxNum HLedger = 11000
-idxNum Typelevel = 12000
-idxNum Scalaz = 13000
-idxNum Shapeless = 14000
-idxNum Purescript = 15000
-idxNum Plowtech = 16000
+idxNum Plowtech = 1000
+idxNum Haskell = 2000
+idxNum Lisp = 3000
+idxNum HaskellGame = 4000
+idxNum Diagrams = 5000
+idxNum Tasty = 6000
+idxNum HaskellDistributed = 7000
+idxNum NumericalHaskell = 8000
+idxNum FSharp = 9000
+idxNum Ghcjs = 10000
+idxNum HaskellBeginners = 11000
+idxNum HLedger = 12000
+idxNum Typelevel = 13000
+idxNum Scalaz = 14000
+idxNum Shapeless = 15000
+idxNum Purescript = 16000
+
 
 -- | Possible supported channels.
 data Channel
-  = Haskell
+  = Plowtech 
+  | Haskell
   | Lisp
   | HaskellGame
   | Diagrams
@@ -116,5 +118,4 @@ data Channel
   | Scalaz
   | Shapeless
   | Purescript
-  | Plowtech
   deriving (Enum)
