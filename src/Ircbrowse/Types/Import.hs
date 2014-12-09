@@ -42,22 +42,22 @@ showChan Purescript = "purescript"
 
 -- | Show a channel.
 showChanInt :: Channel -> Int
-showChanInt Plowtech = 16
-showChanInt Haskell = 1
-showChanInt Lisp = 2
-showChanInt HaskellGame = 3
-showChanInt Diagrams = 4
-showChanInt Tasty = 5
-showChanInt HaskellDistributed = 6
-showChanInt NumericalHaskell = 7
-showChanInt FSharp = 8
-showChanInt Ghcjs = 9
-showChanInt HaskellBeginners = 10
-showChanInt HLedger = 11
-showChanInt Typelevel = 12
-showChanInt Scalaz = 13
-showChanInt Shapeless = 14
-showChanInt Purescript = 15
+showChanInt Plowtech = 1
+showChanInt Haskell = 2
+showChanInt Lisp = 3
+showChanInt HaskellGame = 4
+showChanInt Diagrams = 5
+showChanInt Tasty = 6
+showChanInt HaskellDistributed = 7
+showChanInt NumericalHaskell = 8
+showChanInt FSharp = 9
+showChanInt Ghcjs = 10
+showChanInt HaskellBeginners = 11
+showChanInt HLedger = 12
+showChanInt Typelevel = 13
+showChanInt Scalaz = 14
+showChanInt Shapeless = 15
+showChanInt Purescript = 16
 
 
 -- | Read a channel.
