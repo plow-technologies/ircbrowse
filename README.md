@@ -11,17 +11,25 @@ Create the PostgreSQL database:
 
 Update the database to the latest migration:
 
-    $ dist/build/ircbrowse/ircbrowse ircbrowse.conf --create-version
-    if fails try this
-    $ psql -d ircbrowse         at prompt type this:
+    $ psql ircbrowse < ircbrowse-schema.sql
+    $ psql -d ircbrowse
+    ircbrowse=# DELETE FROM version;
+    ircbrowse=# insert into version (16);
+    ircbrowse=# \q
 
-   * CREATE TABLE version (
-   * key_id serial PRIMARY KEY,
-   * type int,
-   * version int);
-   * \q
-   * Then run ./ircbrowse ircbrowse.conf
-  
+    dist/build/ircbrowse/ircbrowse ircbrowse.conf complete-import
+    dist/build/ircbrowse/ircbrowse
+
+    use ZNC version 1.2
+    use sphinx 2.0.6
+    ./configure --without-mysql --with-pgsql \\
+    --with-pgsql-includes=/usr/include/postgresql/ \\
+    --with-pgsql-lib=/usr/lib/postgresql/8.3/lib/ --prefix=/opt/sphinx/
+    $ make
+
+
+    use psql 9.3
+    
 
 ## Stackage version
 
