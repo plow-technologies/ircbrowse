@@ -2,6 +2,7 @@ module Ircbrowse.Types.Import where
 
 -- | Pretty print a channel in a human-representation.
 prettyChan :: Channel -> String
+prettyChan Plowtech = "#plowtech"
 prettyChan Haskell = "#haskell"
 prettyChan Lisp = "#lisp"
 prettyChan HaskellGame = "#haskell-game"
@@ -17,10 +18,11 @@ prettyChan Typelevel = "#typelevel"
 prettyChan Scalaz = "#scalaz"
 prettyChan Shapeless = "#shapeless"
 prettyChan Purescript = "#purescript"
-prettyChan Plowtech = "#plowtech"
+
 
 -- | Show a channel.
 showChan :: Channel -> String
+showChan Plowtech = "plowtech"
 showChan Haskell = "haskell"
 showChan Lisp = "lisp"
 showChan HaskellGame = "haskell-game"
@@ -36,10 +38,11 @@ showChan Typelevel = "typelevel"
 showChan Scalaz = "scalaz"
 showChan Shapeless = "shapeless"
 showChan Purescript = "purescript"
-showChan Plowtech = "plowtech"
+
 
 -- | Show a channel.
 showChanInt :: Channel -> Int
+showChanInt Plowtech = 16
 showChanInt Haskell = 1
 showChanInt Lisp = 2
 showChanInt HaskellGame = 3
@@ -55,10 +58,11 @@ showChanInt Typelevel = 12
 showChanInt Scalaz = 13
 showChanInt Shapeless = 14
 showChanInt Purescript = 15
-showChanInt Plowtech = 16
+
 
 -- | Read a channel.
 parseChan :: String -> Maybe Channel
+parseChan "plowtech" = Just Plowtech
 parseChan "haskell" =  Just Haskell
 parseChan "lisp" =  Just Lisp
 parseChan "diagrams" =  Just Diagrams
@@ -74,7 +78,6 @@ parseChan "typelevel" = Just Typelevel
 parseChan "scalaz" = Just Scalaz
 parseChan "shapeless" = Just Shapeless
 parseChan "purescript" = Just Purescript
-parseChan "plowtech" = Just Plowtech
 parseChan _ = Nothing
 
 
