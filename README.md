@@ -21,6 +21,8 @@ Update the database to the latest migration:
     dist/build/ircbrowse/ircbrowse
 
     use ZNC version 1.2
+
+    sudo apt-get install libpq-dev to get library for sphinx
     use sphinx 2.0.6
     ./configure --without-mysql --with-pgsql \\
     --with-pgsql-includes=/usr/include/postgresql/ \\
